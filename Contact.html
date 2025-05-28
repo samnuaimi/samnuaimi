@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 19 - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+<link href="css/dURHIM.css?v=1" rel="stylesheet">
+<link href="css/Contact.css?v=1" rel="stylesheet">
+<script src="jquery-3.7.1.min.js"></script>
+<script src="jquery.ui.effect.min.js"></script>
+<script src="wwb19.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $('#reviewsImage1').addClass('visibility-hidden');
+   $('#portfolio-image2').addClass('visibility-hidden');
+   $("a[href*='#text16LayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_text16LayoutGrid').offset().top-88 }, 600, 'easeOutCirc');
+   });
+   function onScrolltext16LayoutGrid()
+   {
+      var $obj = $("#wb_text16LayoutGrid");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+         AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+      }
+   }
+   onScrolltext16LayoutGrid();
+   $(window).scroll(function(event)
+   {
+      onScrolltext16LayoutGrid();
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="col-1">
+</div>
+<div class="col-2">
+<div id="wb_Image1" style="display:inline-block;width:293px;height:293px;z-index:0;">
+<a href="#" onclick="AnimateCss('wb_Image1', 'flip', 0, 4000);return false;"><img src="images/Durhim.png" id="Image1" alt="" width="293" height="293"></a>
+</div>
+</div>
+<div class="col-3">
+<a id="Button1" href="./index.html" style="display:inline-block;width:97px;height:25px;z-index:1;">Home</a>
+</div>
+</div>
+</div>
+<div id="wb_text16LayoutGrid">
+<div id="text16LayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_text16Heading" style="display:block;width:100%;z-index:2;">
+<h2 id="text16Heading">نبذه عن الشركة</h2>
+</div>
+<div id="wb_text16Text">
+<p>شركة تحويل الأموال هي مؤسسة تقدم خدمات تحويل الأموال للأفراد والشركات، مما يتيح لهم إرسال واستقبال الأموال محليًا ودوليًا بسهولة وسرعة. تعتمد هذه الشركات على شبكات واسعة من الفروع والوكلاء لتسهيل عمليات التحويل، سواء عبر التحويلات المصرفية، أو الدفع النقدي</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
+<div class="row">
+<div class="col-1">
+<div id="wb_Text1">
+<span style="color:#98FB98;font-family:Arial;font-size:48px;"><strong>للاتصال</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_features2CardContainer">
+<div id="features2CardContainer">
+<div id="wb_features2Card3" style="display:flex;z-index:5;" class="card">
+<div id="features2Card3-card-body">
+<img id="features2Card3-card-item0" src="images/pngwing.com%2861%29.png" width="700" height="700" alt="" title="">
+<div id="features2Card3-card-item1">رقم الهاتف </div>
+<div id="features2Card3-card-item2">1 (586) 222-2434</div>
+</div>
+</div>
+<div id="wb_features2Card2" style="display:flex;z-index:6;" class="card">
+<div id="features2Card2-card-body">
+<img id="features2Card2-card-item0" src="images/pngwing.com%2859%29.png" width="512" height="512" alt="" title="">
+<div id="features2Card2-card-item1">واتس اب </div>
+<div id="features2Card2-card-item2">1 (313) 334-4444</div>
+</div>
+</div>
+<div id="wb_features2Card1" style="display:flex;z-index:7;" class="card">
+<div id="features2Card1-card-body">
+<img id="features2Card1-card-item0" src="images/pngwing.com%2858%29.png" width="861" height="694" alt="" title="">
+<div id="features2Card1-card-item1">ايميل </div>
+<div id="features2Card1-card-item2">Info@Durhim.com</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

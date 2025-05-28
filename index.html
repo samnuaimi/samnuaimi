@@ -4,29 +4,15 @@
 <meta charset="utf-8">
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 19 - https://www.wysiwygwebbuilder.com">
-<link href="css/Untitled1.css?v=1" rel="stylesheet">
-<link href="css/index.css?v=1" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+<link href="css/dURHIM.css?v=2" rel="stylesheet">
+<link href="css/index.css?v=2" rel="stylesheet">
 <script src="jquery-3.7.1.min.js"></script>
 <script src="wwb19.min.js"></script>
 <script>
 $(document).ready(function()
 {
-   var prevScrollTop = 0;
-   $(window).scroll(function(event)
-   {
-      var scrollTop = $(this).scrollTop();
-      if (Math.abs(prevScrollTop - scrollTop) <= 5)
-         return;
-      if (scrollTop < prevScrollTop)
-      {
-         $('#PageHeader1').removeClass('scroll-up');
-      }
-      else
-      {
-         $('#PageHeader1').addClass('scroll-up');
-      }
-      prevScrollTop = scrollTop;
-   });
    function resizeVideo() 
    {
       var ratio = 16/9;
@@ -54,16 +40,26 @@ $(document).ready(function()
 </script>
 </head>
 <body>
-<header id="PageHeader1" style="position:fixed;text-align:center;left:0;top:0;right:0;height:119px;z-index:7777;">
-<div id="PageHeader1_Container" style="width:970px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
-<div id="wb_Image1" style="position:absolute;left:431px;top:5px;width:108px;height:108px;z-index:0;">
-<a href="#" onclick="AnimateCss('wb_Image1', 'flip', 0, 4000);return false;"><img src="images/Durhim.png" id="Image1" alt="" width="108" height="108"></a></div>
-</div>
-</header>
 <div id="wb_MediaPlayer1" style="position:absolute;left:1056px;top:63px;width:100px;height:56px;z-index:2;">
 <video id="MediaPlayer1" autoplay loop preload="auto" muted>
 <source src="Durhim.mp4" type="video/mp4">
 </video>
+</div>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-2">
+<div id="wb_Image1" style="display:inline-block;width:128px;height:128px;z-index:0;">
+<a href="#" onclick="AnimateCss('wb_Image1', 'flip', 0, 4000);return false;"><img src="images/Durhim.png" id="Image1" alt="" width="128" height="128"></a>
+</div>
+</div>
+<div class="col-3">
+<a id="Button1" href="./Contact.html" style="display:inline-block;width:97px;height:25px;z-index:1;">Contact Us</a>
+</div>
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -1,3 +1,8 @@
+@keyframes animate-fade-in-up
+{
+   0% { transform: translate(0px,100px) rotate(0deg) ; opacity: 0;  }
+   100% { transform: translate(0px,0px) rotate(0deg) ; opacity: 1;  }
+}
 @keyframes flip
 {
    0% { transform: perspective(400px) rotateX(0deg) rotateY(-360deg) scale3d(1,1,1) ;  }
