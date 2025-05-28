@@ -2,20 +2,47 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Page</title>
+<title>Contact</title>
 <meta name="generator" content="WYSIWYG Web Builder 19 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Untitled%20design.png" rel="icon" sizes="1000x1000" type="image/png">
 <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
-<link href="css/dURHIM.css?v=1" rel="stylesheet">
-<link href="css/Contact.css?v=1" rel="stylesheet">
+<link href="css/dURHIM.css?v=3" rel="stylesheet">
+<link href="css/Contact.css?v=3" rel="stylesheet">
 <script src="jquery-3.7.1.min.js"></script>
-<script src="jquery.ui.effect.min.js"></script>
+<script src="jquery-ui.min.js"></script>
 <script src="wwb19.min.js"></script>
 <script>
 $(document).ready(function()
 {
    $('#reviewsImage1').addClass('visibility-hidden');
    $('#portfolio-image2').addClass('visibility-hidden');
+   function onScrollBookmark1()
+   {
+      var $obj = $("#wb_Bookmark1");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         ShowObjectWithEffect('Layer2', 0, 'slideright', 500);
+         ShowObjectWithEffect('Layer1', 0, 'slideleft', 500);
+      }
+      else
+      if ($obj.hasClass("in-viewport") && !$obj.inViewPort(true))
+      {
+         $obj.removeClass("in-viewport");
+         ShowObjectWithEffect('Layer2', 1, 'slideright', 500);
+         ShowObjectWithEffect('Layer1', 1, 'slideleft', 500);
+      }
+   }
+   if (!$('#wb_Bookmark1').inViewPort(true))
+   {
+      $('#wb_Bookmark1').addClass("in-viewport");
+   }
+   onScrollBookmark1();
+   $(window).scroll(function(event)
+   {
+      onScrollBookmark1();
+   });
    $("a[href*='#text16LayoutGrid']").click(function(event)
    {
       event.preventDefault();
@@ -43,14 +70,19 @@ $(document).ready(function()
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="col-1">
+<div id="wb_Bookmark1" style="display:block;width:100%;z-index:0;">
+<div id="Bookmark1" style="visibility:hidden;"></div>
+
+</div>
+<a id="Button2" href="./index.html" style="display:inline-block;width:113px;height:43px;z-index:1;">Home</a>
 </div>
 <div class="col-2">
-<div id="wb_Image1" style="display:inline-block;width:293px;height:293px;z-index:0;">
-<a href="#" onclick="AnimateCss('wb_Image1', 'flip', 0, 4000);return false;"><img src="images/Durhim.png" id="Image1" alt="" width="293" height="293"></a>
+<div id="wb_Image1" style="display:inline-block;width:293px;height:293px;z-index:2;">
+<a href="#" onclick="AnimateCss('wb_Image1', 'flip', 0, 4000);return false;"><img src="images/Untitled design.png" id="Image1" alt="" width="293" height="293"></a>
 </div>
 </div>
 <div class="col-3">
-<a id="Button1" href="./index.html" style="display:inline-block;width:97px;height:25px;z-index:1;">Home</a>
+<a id="Button3" href="./index.html" style="display:inline-block;width:113px;height:43px;z-index:3;">الصفحة الرئيسية</a>
 </div>
 </div>
 </div>
@@ -59,7 +91,7 @@ $(document).ready(function()
 <div class="row">
 <div class="col-1">
 <div class="col-1-padding">
-<div id="wb_text16Heading" style="display:block;width:100%;z-index:2;">
+<div id="wb_text16Heading" style="display:block;width:100%;z-index:4;">
 <h2 id="text16Heading">نبذه عن الشركة</h2>
 </div>
 <div id="wb_text16Text">
@@ -83,27 +115,43 @@ $(document).ready(function()
 </div>
 <div id="wb_features2CardContainer">
 <div id="features2CardContainer">
-<div id="wb_features2Card3" style="display:flex;z-index:5;" class="card">
+<div id="wb_features2Card3" style="display:flex;z-index:7;" class="card">
 <div id="features2Card3-card-body">
 <img id="features2Card3-card-item0" src="images/pngwing.com%2861%29.png" width="700" height="700" alt="" title="">
-<div id="features2Card3-card-item1">رقم الهاتف </div>
-<div id="features2Card3-card-item2">1 (586) 222-2434</div>
+<div id="features2Card3-card-item1"><a href="tel:1 (586) 222-2434">رقم الهاتف </a></div>
+<div id="features2Card3-card-item2"><a href="tel:1 (586) 222-2434">1 (586) 222-2434</a></div>
 </div>
 </div>
-<div id="wb_features2Card2" style="display:flex;z-index:6;" class="card">
+<div id="wb_features2Card2" style="display:flex;z-index:8;" class="card">
 <div id="features2Card2-card-body">
 <img id="features2Card2-card-item0" src="images/pngwing.com%2859%29.png" width="512" height="512" alt="" title="">
-<div id="features2Card2-card-item1">واتس اب </div>
-<div id="features2Card2-card-item2">1 (313) 334-4444</div>
+<div id="features2Card2-card-item1"><a href="https://wa.me/13133344444">واتس اب </a></div>
+<div id="features2Card2-card-item2"><a href="https://wa.me/13133344444">1 (313) 334-4444</a></div>
 </div>
 </div>
-<div id="wb_features2Card1" style="display:flex;z-index:7;" class="card">
+<div id="wb_features2Card1" style="display:flex;z-index:9;" class="card">
 <div id="features2Card1-card-body">
 <img id="features2Card1-card-item0" src="images/pngwing.com%2858%29.png" width="861" height="694" alt="" title="">
-<div id="features2Card1-card-item1">ايميل </div>
-<div id="features2Card1-card-item2">Info@Durhim.com</div>
+<div id="features2Card1-card-item1"><a href="mailto:info@durhim.com">ايميل </a></div>
+<div id="features2Card1-card-item2"><a href="mailto:info@durhim.com">Info@Durhim.com</a></div>
 </div>
 </div>
+</div>
+</div>
+<div id="Layer1" style="position:fixed;text-align:center;visibility:hidden;left:0px;top:0px;width:11.134%;height:1834px;z-index:18;">
+<div id="Layer1-overlay"></div>
+<div id="Layer1_Container" style="width:108px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<a id="Button1" href="./index.html" style="position:absolute;left:5px;top:372px;width:98px;height:39px;z-index:10;">HOME</a>
+<div id="wb_Image3" style="position:absolute;left:1px;top:196px;width:107px;height:107px;z-index:11;">
+<a href="#" onclick="AnimateCss('wb_Image3', 'flip', 0, 4000);return false;"><img src="images/Untitled design.png" id="Image3" alt="" width="107" height="107"></a></div>
+</div>
+</div>
+<div id="Layer2" style="position:fixed;text-align:center;visibility:hidden;left:auto;right:0px;top:0px;width:11.134%;height:1834px;z-index:19;">
+<div id="Layer2-overlay"></div>
+<div id="Layer2_Container" style="width:108px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
+<a id="Button4" href="./index.html" style="position:absolute;left:5px;top:372px;width:98px;height:39px;z-index:12;">الصفحة الرئيسية</a>
+<div id="wb_Image2" style="position:absolute;left:1px;top:196px;width:107px;height:107px;z-index:13;">
+<a href="#" onclick="AnimateCss('wb_Image2', 'flip', 0, 4000);return false;"><img src="images/Untitled design.png" id="Image2" alt="" width="107" height="107"></a></div>
 </div>
 </div>
 </body>
