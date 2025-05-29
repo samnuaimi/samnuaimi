@@ -7,11 +7,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="Untitled%20design.png" rel="icon" sizes="1000x1000" type="image/png">
 <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
-<link href="css/dURHIM.css?v=3" rel="stylesheet">
-<link href="css/Contact.css?v=3" rel="stylesheet">
+<link href="css/dURHIM.css?v=4" rel="stylesheet">
+<link href="css/Contact.css?v=4" rel="stylesheet">
 <script src="jquery-3.7.1.min.js"></script>
 <script src="jquery-ui.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="animated.heading.min.js"></script>
 <script src="wwb19.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var Dialog1 = document.querySelector('#Dialog1');
+   var bsDialog1 = new bootstrap.Modal(Dialog1);
+   Dialog1.addEventListener('show.bs.modal', function(e)
+   {
+      var dlg = document.querySelector('#Dialog1 .modal-dialog');
+      dlg.classList.remove('animate-hide');
+      dlg.classList.add('animate-show');
+   });
+   Dialog1.addEventListener('hide.bs.modal', function(e)
+   {
+      var dlg = document.querySelector('#Dialog1 .modal-dialog');
+      dlg.classList.remove('animate-show');
+      var forceReflow = e.target.offsetWidth;
+      dlg.classList.add('animate-hide');
+   });
+   $('#Dialog1 .modal-dialog').draggable({handle: '.modal-header'});
+});
+</script>
 <script>
 $(document).ready(function()
 {
@@ -63,6 +87,36 @@ $(document).ready(function()
    {
       onScrolltext16LayoutGrid();
    });
+   $("a[href*='#Bookmark2']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_Bookmark2').offset().top }, 600, 'linear');
+   });
+   function onScrollBookmark2()
+   {
+      var $obj = $("#wb_Bookmark2");
+      if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+      {
+         $obj.addClass("in-viewport");
+         $('#Dialog1').modal('show');
+      }
+      else
+      if ($obj.hasClass("in-viewport") && !$obj.inViewPort(true))
+      {
+         $obj.removeClass("in-viewport");
+         $('#Dialog1').modal('hide');
+      }
+   }
+   if (!$('#wb_Bookmark2').inViewPort(true))
+   {
+      $('#wb_Bookmark2').addClass("in-viewport");
+   }
+   onScrollBookmark2();
+   $(window).scroll(function(event)
+   {
+      onScrollBookmark2();
+   });
+   $('#Extension1').animateHeading('scale', 2000); 
 });
 </script>
 </head>
@@ -74,7 +128,7 @@ $(document).ready(function()
 <div id="Bookmark1" style="visibility:hidden;"></div>
 
 </div>
-<a id="Button2" href="./index.html" style="display:inline-block;width:113px;height:43px;z-index:1;">Home</a>
+<a id="Button2" href="./index.html" onmouseover="AnimateCss('Button2', 'animate-background', 0, 500);return false;" onmouseout="AnimateCss('Button2', 'animate-opacity', 0, 500);return false;" style="display:inline-block;width:113px;height:43px;z-index:1;">HOME</a>
 </div>
 <div class="col-2">
 <div id="wb_Image1" style="display:inline-block;width:293px;height:293px;z-index:2;">
@@ -82,7 +136,7 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-3">
-<a id="Button3" href="./index.html" style="display:inline-block;width:113px;height:43px;z-index:3;">الصفحة الرئيسية</a>
+<a id="Button3" href="./index.html" onmouseover="AnimateCss('Button3', 'animate-background', 0, 500);return false;" onmouseout="AnimateCss('Button3', 'animate-opacity', 0, 500);return false;" style="display:inline-block;width:113px;height:43px;z-index:3;">الصفحة الرئيسية</a>
 </div>
 </div>
 </div>
@@ -106,8 +160,14 @@ $(document).ready(function()
 <div id="LayoutGrid2">
 <div class="row">
 <div class="col-1">
-<div id="wb_Text1">
-<span style="color:#98FB98;font-family:Arial;font-size:48px;"><strong>للاتصال</strong></span>
+<div class="col-1-padding">
+<div id="wb_Extension1" style="display:block;position:relative;width:100%;z-index:6;">
+<h1 id="Extension1">
+<span class="heading heading-active">اتصل بنا للاستفسار</span>
+<span class="heading">اتصل بنا</span>
+<span class="heading">على طرق الاتصال في الاسفل</span>
+</h1>
+</div>
 </div>
 </div>
 </div>
@@ -138,7 +198,7 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-<div id="Layer1" style="position:fixed;text-align:center;visibility:hidden;left:0px;top:0px;width:11.134%;height:1834px;z-index:18;">
+<div id="Layer1" style="position:fixed;text-align:center;visibility:hidden;left:0px;top:0px;width:11.134%;height:1834px;z-index:20;">
 <div id="Layer1-overlay"></div>
 <div id="Layer1_Container" style="width:108px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <a id="Button1" href="./index.html" style="position:absolute;left:5px;top:372px;width:98px;height:39px;z-index:10;">HOME</a>
@@ -146,13 +206,37 @@ $(document).ready(function()
 <a href="#" onclick="AnimateCss('wb_Image3', 'flip', 0, 4000);return false;"><img src="images/Untitled design.png" id="Image3" alt="" width="107" height="107"></a></div>
 </div>
 </div>
-<div id="Layer2" style="position:fixed;text-align:center;visibility:hidden;left:auto;right:0px;top:0px;width:11.134%;height:1834px;z-index:19;">
+<div id="Layer2" style="position:fixed;text-align:center;visibility:hidden;left:auto;right:0px;top:0px;width:11.134%;height:1834px;z-index:21;">
 <div id="Layer2-overlay"></div>
 <div id="Layer2_Container" style="width:108px;position:relative;margin-left:auto;margin-right:auto;text-align:left;">
 <a id="Button4" href="./index.html" style="position:absolute;left:5px;top:372px;width:98px;height:39px;z-index:12;">الصفحة الرئيسية</a>
 <div id="wb_Image2" style="position:absolute;left:1px;top:196px;width:107px;height:107px;z-index:13;">
 <a href="#" onclick="AnimateCss('wb_Image2', 'flip', 0, 4000);return false;"><img src="images/Untitled design.png" id="Image2" alt="" width="107" height="107"></a></div>
 </div>
+</div>
+<div id="Layer3" style="position:relative;text-align:center;width:100%;;height:296px;float:left;z-index:22;">
+<div id="Layer3_Container" style="width:970px;height:296px;position:relative;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;text-align:left;">
+<div id="wb_Image4" style="position:absolute;left:375px;top:38px;width:221px;height:221px;z-index:14;">
+<img src="images/qrcode%282%29.png" id="Image4" alt="" width="221" height="221"></div>
+</div>
+</div>
+<div id="Dialog1" class="modal fade" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+<h2 class="modal-title">Scan  QR Code - امسح الكود</h2>
+</div>
+<div class="modal-body">
+<div id="wb_Text2">
+<span style="color:#00FF00;font-family:Arial;font-size:20px;">&quot;استخدم هاتفك الذكي أو جهازك اللوحي لمسح رمز الاستجابة السريعة. بعد نجاح المسح، سيظهر رابط على شاشة جهازك، ما عليك سوى النقر عليه للمتابعة.&quot;<br></span><span style="color:#00FF00;font-family:Arial;font-size:15px;">&quot;Use your smartphone or tablet to scan the QR code. Once the scan is successful, a link will appear on your device's screen simply tap it to proceed.&quot;</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_Bookmark2" style="position:absolute;left:452px;top:1574px;width:64px;height:45px;z-index:24;">
+<div id="Bookmark2" style="visibility:hidden;"></div>
 </div>
 </body>
 </html>

@@ -9,6 +9,31 @@ body
    margin: 0;
    padding: 0;
 }
+*
+{
+   scrollbar-color: rgba(0,100,0,1.00) rgba(0,100,0,0.16);
+}
+*::-webkit-scrollbar
+{
+   width: 0px;
+}
+*::-webkit-scrollbar-track
+{
+   background: rgba(0,100,0,0.16);
+}
+*::-webkit-scrollbar-thumb
+{
+   background-color: rgba(0,100,0,1.00);
+}
+*::-webkit-scrollbar-corner
+{
+   background: rgba(0,100,0,0.16);
+}
+*::-webkit-scrollbar-thumb:hover
+{
+   background-color: rgba(152,251,152,1.00);
+   border-color: rgba(0,100,0,1.00);
+}
 .visibility-hidden
 {
    visibility: hidden;
@@ -40,7 +65,7 @@ body
    background-image: none;
    color: #7FFFD4;
    font-family: Arial;
-   font-weight: normal;
+   font-weight: bold;
    font-style: normal;
    font-size: 16px;
    padding: 1px 6px 1px 6px;
@@ -295,7 +320,7 @@ body
    border: 0px solid #CCCCCC;
    border-radius: 0px;
    box-sizing: border-box;
-   margin: 0;
+   margin: 0 0 10px 0 ;
 }
 #LayoutGrid2
 {
@@ -331,6 +356,12 @@ body
    width: 100%;
    text-align: center;
 }
+#LayoutGrid2 > .row > .col-1 > .col-1-padding
+{
+   box-sizing: border-box;
+   width: 100%;
+   padding: 25px 0 30px 0;
+}
 #LayoutGrid2:before,
 #LayoutGrid2:after,
 #LayoutGrid2 .row:before,
@@ -352,33 +383,12 @@ body
    width: 100% !important;
 }
 }
-#wb_Text1 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0;
-   margin: 0;
-   text-align: center;
-}
-#wb_Text1 div
-{
-   text-align: center;
-}
-#wb_Text1
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
-}
 #wb_features2CardContainer
 {
    background-color: #2E8B57;
    background-image: none;
    border: 0px solid #CCCCCC;
-   border-radius: 0px;
+   border-radius: 20px;
    box-sizing: border-box;
    position: relative;
 }
@@ -612,13 +622,13 @@ body
    vertical-align: top;
    border: 1px solid #2E8B57;
    border-radius: 7px;
-   background-color: #7FFFD4;
+   background-color: rgba(127,255,212,0.14);
    background-image: none;
-   color: #3CB371;
+   color: #008000;
    font-family: Arial;
-   font-weight: normal;
+   font-weight: bold;
    font-style: normal;
-   font-size: 16px;
+   font-size: 13px;
    padding: 1px 6px 1px 6px;
    text-align: center;
    -webkit-appearance: none;
@@ -665,11 +675,11 @@ body
    vertical-align: top;
    border: 1px solid #2E8B57;
    border-radius: 7px;
-   background-color: #7FFFD4;
+   background-color: rgba(127,255,212,0.14);
    background-image: none;
-   color: #3CB371;
+   color: #008000;
    font-family: Arial;
-   font-weight: normal;
+   font-weight: bold;
    font-style: normal;
    font-size: 16px;
    padding: 1px 6px 1px 6px;
@@ -707,9 +717,9 @@ body
    background-image: none;
    color: #7FFFD4;
    font-family: Arial;
-   font-weight: normal;
+   font-weight: bold;
    font-style: normal;
-   font-size: 16px;
+   font-size: 15px;
    padding: 1px 6px 1px 6px;
    text-align: center;
    -webkit-appearance: none;
@@ -733,4 +743,308 @@ body
    top: 0;
    width: 100%;
    height: 100%;
+}
+#Layer3
+{
+   background-color: #98FB98;
+   background-image: none;
+   border-radius: 20px;
+   margin: 0;
+}
+#Layer3
+{
+   display: inline-flex;
+}
+#wb_Image4
+{
+   vertical-align: top;
+}
+#Image4
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+}
+#Dialog1
+{
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
+#Dialog1 .modal-content
+{
+   background-color: #1B5233;
+   background-image: none;
+   border: 1px solid #DEE2E6;
+   border-radius: 20px;
+   overflow: visible;
+   pointer-events: all;
+}
+#Dialog1.fade
+{
+   opacity: 1;
+   transition: all 500ms linear;
+}
+#Dialog1 .animate-show
+{
+   animation-duration: 500ms;
+   animation-fill-mode: both;
+   animation-name: slide-up-in;
+}
+#Dialog1 .animate-hide
+{
+   animation-duration: 500ms;
+   animation-fill-mode: both;
+   animation-name: slide-up-in;
+   animation-direction: reverse;
+}
+#Dialog1.modal
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 9999;
+   display: none;
+   overflow: hidden;
+   -webkit-overflow-scrolling: touch;
+   outline: 0;
+}
+#Dialog1 .modal-open .modal
+{
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+#Dialog1 .modal-open
+{
+   overflow: hidden;
+}
+#Dialog1 .modal-dialog
+{
+   position: relative;
+   width: 1052px;
+   margin-left: auto;
+   margin-right: auto;
+}
+#Dialog1 .modal-content
+{
+   position: relative;
+   -webkit-background-clip: padding-box;
+   background-clip: padding-box;
+   outline: 0;
+}
+#Dialog1 .modal-header
+{
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   padding: 10px 10px 10px 10px;
+   background-color: #90EE90;
+   border-bottom: 1px solid #D2D2D2;
+}
+#Dialog1 .modal-footer
+{
+   border-bottom-left-radius: 20px;
+   border-bottom-right-radius: 20px;
+   padding: 10px 10px 10px 10px;
+   border-top: 1px solid #D2D2D2;
+}
+#Dialog1 .modal-body
+{
+   position: relative;
+   width: 1052px;
+}
+#Dialog1 .close
+{
+   float: right;
+   font-size: 21px;
+   font-weight: 700;
+   line-height: 1;
+   color: #006400;
+   text-shadow: 0px 1px 0px #fff;
+   opacity: 0.5;
+   -webkit-appearance: none;
+   padding: 0;
+   cursor: pointer;
+   background: 0 0;
+   border: 0;
+   margin-top: -2px;
+}
+.modal-backdrop
+{
+   position: fixed;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1040;
+   background-color: #000;
+}
+.modal-backdrop.fade
+{
+   opacity: 0;
+   transition: opacity .15s linear;
+}
+.modal-backdrop.show
+{
+   opacity: 0.5 !important;
+}
+.modal-open
+{
+   overflow: hidden;
+}
+#Dialog1 .modal-header
+{
+   cursor: move;
+}
+#Dialog1 .modal-dialog-centered
+{
+   display: flex;
+   align-items: center;
+   margin: 1.75rem auto;
+   min-height: calc(100% - 3.5rem);
+   pointer-events: none;
+}
+#Dialog1 .modal-dialog-centered::before
+{
+   display: block;
+   height: calc(100vh - 3.5rem);
+   content: "";
+}
+#Dialog1 .modal-title
+{
+   color: #006400;
+   font-family: Arial;
+   font-weight: bold;
+   font-size: 16px;
+   font-style: normal;
+   text-align: center;
+   margin: 0;
+}
+#Dialog1 .modal-body
+{
+   box-sizing: border-box;
+   font-size: 0;
+   padding: 0;
+   text-align: center;
+}
+#wb_Text2 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 20px 20px 20px 20px;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text2 div
+{
+   text-align: center;
+}
+#wb_Text2
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#Extension1
+{
+   color: #98FB98;
+   display: block;
+   font-family: Arial;
+   font-size: 64px;
+   font-style: normal;
+   font-weight: bold;
+   margin: 0;
+   padding: 25px;
+}
+#Extension1
+{
+}
+#Extension1 .heading
+{
+   display: inline-block;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   text-align: center;
+   opacity: 0;
+}
+#Extension1 .heading-active
+{
+   opacity: 1;
+   -webkit-animation: animated-heading-scale-in 500ms;
+   animation: animated-heading-scale-in 500ms;
+}
+#Extension1 .heading-inactive
+{
+   -webkit-animation: animated-heading-scale-out 500ms;
+   animation: animated-heading-scale-out 500ms;
+}
+@-webkit-keyframes animated-heading-scale-in
+{
+   0%
+   {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
+   100%
+   {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+   }
+}
+@keyframes animated-heading-scale-in
+{
+   0%
+   {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
+   100%
+   {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+   }
+}
+@-webkit-keyframes animated-heading-scale-out
+{
+   0%
+   {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+   }
+   100%
+   {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
+}
+@keyframes animated-heading-scale-out 
+{
+   0%
+   {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+   }
+   100%
+   {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+   }
 }

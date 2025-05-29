@@ -1,13 +1,29 @@
+@keyframes animate-background
+{
+   0% { background-color: #006400;  }
+   100% { background-color: #90EE90;  }
+}
 @keyframes animate-fade-in-up
 {
    0% { transform: translate(0px,100px) rotate(0deg) ; opacity: 0;  }
    100% { transform: translate(0px,0px) rotate(0deg) ; opacity: 1;  }
+}
+@keyframes animate-opacity
+{
+   0% { opacity: 1;  }
+   50% { opacity: 0;  }
+   100% { opacity: 1;  }
 }
 @keyframes flip
 {
    0% { transform: perspective(400px) rotateX(0deg) rotateY(-360deg) scale3d(1,1,1) ;  }
    50% { transform: perspective(400px) rotateX(0deg) rotateY(-180deg) scale3d(1.2,1.2,1.2) ;  }
    100% { transform: perspective(400px) rotateX(0deg) rotateY(0deg) scale3d(1.0,1.0,1.0) ;  }
+}
+@keyframes slide-up-in
+{
+   0% { transform: translate(0px,100%) rotate(1deg) ; opacity: 0; transform-origin: 0 0;  }
+   100% { opacity: 1; transform: translate(0px,0px) rotate(0deg) ; transform-origin: 0 0;  }
 }
 h1, .h1
 {
